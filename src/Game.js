@@ -33,11 +33,11 @@ export default class Game {
   }
 
   launch() {
+    clearTimeout(this.timeout); // prevent multiple game loops on "Play Again"
     this.snake = new Snake(...this.onStart.snakePosition);
     this.apple = new Apple(this.onStart.applePosition);
     this.score = this.onStart.score;
     this.speed = this.onStart.speed;
-
     this.gameLoop();
   }
 
@@ -57,7 +57,7 @@ export default class Game {
 
       this.updateCanvas();
 
-      setTimeout(this.gameLoop.bind(this), this.speed);
+      this.timeout = setTimeout(this.gameLoop.bind(this), this.speed);
     }
   }
 
