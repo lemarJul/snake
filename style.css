@@ -1,26 +1,29 @@
 :root {
     --canvas-size: 600px;
 }
-body{
-    margin : 0;
+
+body {
+    margin: 0;
 }
+
 #snake-game {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Adjust this to your desired height */
-  }
+    height: 100vh;
+    /* Adjust this to your desired height */
+}
 
-#snake-game canvas{
-    border : 5px solid #1e5837;
-    background-color : #2e8b57;
+#snake-game canvas {
+    border: 5px solid #1e5837;
+    background-color: #2e8b57;
+    width: 90vw;
 }
 
 
-@media only screen and (min-width: 600px) {
-    canvas {
+@media only screen and (min-width: 400px) {
+    #snake-game canvas {
         /* Adjust canvas size for screens up to 768px wide */
         width: 400px;
     }
 }
-
